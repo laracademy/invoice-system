@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/', 'HomeController@dashboard')->name('home');
+});
+
+require app_path('Http/Routes/Auth.php');

@@ -14,10 +14,10 @@
                 <li>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="ti-lock"></i>
-                        <p>Account <b class="caret"></b></p>
+                        <p>Account ({{ Auth::user()->email }})<b class="caret"></b></p>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="{{ route('auth.logout') }}">Logout</a></li>
                     </ul>
                 </li>
             </ul>
