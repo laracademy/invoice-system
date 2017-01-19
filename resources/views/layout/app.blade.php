@@ -37,8 +37,7 @@
 
                 <div class="content">
                     <div class="container-fluid">
-                        <div class="row">
-                        </div>
+                        @yield('content')
                     </div>
                 </div>
 

@@ -8,26 +8,26 @@
         </div>
 
         <ul class="nav">
-            <li class="active">
-                <a href="dashboard.html">
+            <li class="{{ Request::is('/') ? 'active' : '' }}">
+                <a href="{{ route('home') }}">
                     <i class="ti-pie-chart"></i>
                     <p>Dashboard</p>
                 </a>
             </li>
-            <li>
-                <a href="dashboard.html">
+            <li class="{{ Request::is('client*') ? 'active' : '' }}">
+                <a href="{{ route('client') }}">
                     <i class="ti-user"></i>
                     <p>Clients</p>
                 </a>
             </li>
-            <li>
-                <a href="dashboard.html">
+            <li class="{{ Request::is('projects*') ? 'active' : '' }}">
+                <a href="{{ route('project') }}">
                     <i class="ti-book"></i>
                     <p>Projects</p>
                 </a>
             </li>
-            <li>
-                <a href="dashboard.html">
+            <li class="{{ Request::is('invoice*') ? 'active' : '' }}">
+                <a href="{{ route('invoice') }}">
                     <i class="ti-receipt"></i>
                     <p>Invoices</p>
                 </a>

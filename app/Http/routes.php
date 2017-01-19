@@ -16,3 +16,6 @@ Route::group(['middleware' => 'auth'], function() {
 });
 
 require app_path('Http/Routes/Auth.php');
+require app_path('Http/Routes/ClientRoutes.php');
+require app_path('Http/Routes/ProjectRoutes.php');
+require app_path('Http/Routes/InvoiceRoutes.php');
