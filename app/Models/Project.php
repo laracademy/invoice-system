@@ -15,4 +15,11 @@ class Project extends Model
     {
         return $this->hasOne(\App\Models\Client::class, 'id', 'client_id');
     }
+
+    // helpers
+    public static function getSelectbox()
+    {
+        return Project::orderBy('name')->get()->pluck('name', 'id');
+    }
+
 }

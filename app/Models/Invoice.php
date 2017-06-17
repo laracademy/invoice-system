@@ -30,6 +30,12 @@ class Invoice extends Model
         return $this->hasMany(\App\Models\Payment::class, 'invoice_id', 'id');
     }
 
+    // attributes
+    public function setAmountAttribute($value)
+    {
+        $this->attributes['amount'] = $value * 100;
+    }
+
     // helpers
 
     public function isPaid()

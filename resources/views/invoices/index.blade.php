@@ -11,7 +11,7 @@
                     <h4 class="title">
                         Invoices
                         <div class="pull-right">
-                            <a href="{{ route('project.create') }}" class="btn btn-info btn-fill"><i class="ti-plus"></i> Add Invoice</a>
+                            <a href="{{ route('invoice.create') }}" class="btn btn-info btn-fill"><i class="ti-plus"></i> Add Invoice</a>
                         </div>
                     </h4>
                     <p class="category">All of your invoices are shown below in the list</p>
@@ -51,7 +51,11 @@
                                         {{ $invoice->project->name }}
                                     </td>
                                     <td>
-                                        {{ $invoice->due_at->format('F d, Y') }}
+                                        @if($invoice->due_at->timestamp > 0)
+                                            {{ $invoice->due_at->format('F d, Y') }}
+                                        @else
+                                            No Due Date
+                                        @endif
                                     </td>
                                     <td>
                                         @if($invoice->isPaid())
